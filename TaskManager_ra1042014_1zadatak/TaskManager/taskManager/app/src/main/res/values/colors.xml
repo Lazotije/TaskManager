@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="crvena"> 	#FF0000</color>
+    <color name="zuta">     #FFFF00</color>
+    <color name="zelena"> 	#9ACD32</color>
+    <color name="ljubicasta">#6600cc</color>
+    <color name="bez">#ffff33</color>
+    <color name="tirkiz">#00ffff</color>
+    <color name="oker">#F0E68C</color>
+    <color name="bez_boja">#F0E68C</color>
+</resources>

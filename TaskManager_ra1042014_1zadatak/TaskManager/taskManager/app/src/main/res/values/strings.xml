@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Task Manager</string>
+    <string name="moje_dugme">Novi zadatak</string>
+    <string name="statistika">Statistika</string>
+    <string name="dodaj">dodaj</string>
+    <string name="otkazi">otkazi</string>
+    <string name="crveni">crveni</string>
+    <string name="zeleni">zeleni</string>
+    <string name="zuti">zuti</string>
+</resources>

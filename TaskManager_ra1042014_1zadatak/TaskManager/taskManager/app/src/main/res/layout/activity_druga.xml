@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/oker">
+
+
+        <!-- ime zadatka-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/linear6"
+            android:layout_alignParentTop="true"        >
+
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Ime zadatka"
+                android:padding="9dp"
+                android:text=""
+                android:background="#ffffff"
+                android:gravity="center"
+                android:id="@+id/imeZadatka" />
+
+        </LinearLayout>
+
+        <!--datum -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/linear7"
+            android:orientation="horizontal"
+            android:layout_below="@+id/linear6"
+
+            >
+            <DatePicker
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:calendarViewShown="false"
+                android:padding="@dimen/activity_horizontal_margin"
+                android:datePickerMode="spinner"
+                android:startYear="2017"
+                android:id="@+id/datum">
+            </DatePicker>
+
+        </LinearLayout>
+
+        <!--vreme -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/linear8"
+            android:orientation="horizontal"
+            android:layout_below="@+id/linear7"
+            android:layout_above="@+id/linear5">
+
+            <TimePicker
+                android:id="@+id/timePicker"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/activity_horizontal_margin"
+                android:timePickerMode="spinner" />
+        </LinearLayout>
+
+        <!--opis zadatka-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:id="@+id/linear5"
+            android:layout_above="@+id/linear4"
+            >
+
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="10dp"
+                android:hint="Opis zadatka"
+                android:text=""
+                android:padding="9dp"
+                android:gravity="left"
+                android:id="@+id/opisZadatka"
+                android:background="#ffffff"
+                android:inputType="textMultiLine"
+                android:lines="5"
+
+                />
+
+        </LinearLayout>
+
+        <!--checker-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/linear4"
+            android:layout_above="@+id/linear3">
+
+
+
+            <CheckBox
+                android:id="@+id/checkBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginStart="23dp"
+                android:textStyle="bold"
+                android:text="Podseti me 15 minuta pre isteka" />
+
+
+        </LinearLayout>
+
+
+        <!--dugmici u boji-->
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="3"
+            android:id="@+id/linear3"
+            android:layout_above="@+id/linear2">
+
+
+            <Button
+                android:id="@+id/button5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="!!!"
+                android:backgroundTint="@color/crvena"
+
+                />
+
+
+            <Button
+                android:id="@+id/button6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="!!"
+                android:backgroundTint="@color/zuta"
+                />
+
+            <Button
+                android:id="@+id/button7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="!"
+                android:backgroundTint="@color/zelena"
+                />
+
+
+        </LinearLayout>
+
+
+        <!--donja dva dugmica-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:id="@+id/linear2"
+            android:layout_alignParentBottom="true"
+            >
+
+            <Button
+                android:id="@+id/button3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/dodaj" />
+
+            <Button
+                android:id="@+id/button4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/otkazi" />
+
+
+
+        </LinearLayout>
+
+
+
+</LinearLayout>
+
+
+</ScrollView>
+
