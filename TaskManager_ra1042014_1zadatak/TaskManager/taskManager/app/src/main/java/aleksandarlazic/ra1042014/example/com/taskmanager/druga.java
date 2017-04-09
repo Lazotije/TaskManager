@@ -44,6 +44,7 @@ public class druga extends AppCompatActivity {
     final TaskAdapter adapter = new TaskAdapter(this);
     ListView lw;
 
+
     public Zadatak napraviZadatak(){
         Zadatak z = new Zadatak(ime.getText().toString(),opis.getText().toString(),vratiPrioritet(),
                 uzmiVreme(), uzmiDatum());
@@ -102,14 +103,11 @@ public class druga extends AppCompatActivity {
         checkBox = (CheckBox) findViewById(R.id.checkBox);
 
 
-
         dodaj.setEnabled(false);
 
         ime.addTextChangedListener(new TextWatcher() {
             @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
@@ -127,16 +125,12 @@ public class druga extends AppCompatActivity {
             }
 
             @Override
-            public void afterTextChanged(Editable s) {
-
-            }
+            public void afterTextChanged(Editable s) {}
         });
 
         opis.addTextChangedListener(new TextWatcher() {
             @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
@@ -154,9 +148,7 @@ public class druga extends AppCompatActivity {
             }
 
             @Override
-            public void afterTextChanged(Editable s) {
-
-            }
+            public void afterTextChanged(Editable s) {}
         });
 
 
@@ -164,9 +156,10 @@ public class druga extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Log.d(TAG, "usao u dodaj: ");
-                adapter.dodajZadatak(napraviZadatak());
+
+                //adapter.dodajZadatak(napraviZadatak());
                 Intent i = new Intent(druga.this, MainActivity.class);
-                i.putExtra("z3",napraviZadatak());
+                i.putExtra("z",napraviZadatak());
                 startActivity(i);
             }
         });
@@ -214,8 +207,6 @@ public class druga extends AppCompatActivity {
                 crveni.setEnabled(true);
                 zeleni.setEnabled(true);
                 zuti.setEnabled(false);
-
-
             }
         });
 
@@ -236,8 +227,6 @@ public class druga extends AppCompatActivity {
                 crveni.setEnabled(true);
                 zuti.setEnabled(true);
                 zeleni.setEnabled(false);
-
-
             }
         });
 

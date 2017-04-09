@@ -3,35 +3,17 @@ package aleksandarlazic.ra1042014.example.com.taskmanager;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.ListViewCompat;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
 
-import java.util.ArrayList;
-
 public class MainActivity extends AppCompatActivity {
 
     public static final String TAG = "tag" ;
-
-    Zadatak z1= new Zadatak();
-    Zadatak z2= new Zadatak();
-
     TaskAdapter adapter = new TaskAdapter(this);
+    public int brojZadataka=0;
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-        ListView lv = (ListView) findViewById(R.id.lista);
-        Log.d(TAG, "onResume: ");
-        if(getIntent().getSerializableExtra("z3")!=null) {
-            Zadatak z3 = new Zadatak();
-            z3 = (Zadatak) getIntent().getSerializableExtra("z3");
-            adapter.dodajZadatak(z3);
-            lv.setAdapter(adapter);
-        }
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,22 +27,14 @@ public class MainActivity extends AppCompatActivity {
 
 
         Log.d(TAG, "onCreate: pre ubacivanja");
-        z1.setIme("zad");
-        z1.setDatum("25.01.995");
-        z1.setPrioritet(3);
-        z2.setOpis("opis drugog");
-        z2.setVreme("16:23");
-        z2.setPrioritet(1);
-        adapter.dodajZadatak(z1);
-        adapter.dodajZadatak(z2);
 
-        //Zadatak z3 = (Zadatak) getIntent().getSerializableExtra("z3");
-//        if(getIntent().getSerializableExtra("z3")!=null) {
-//            Zadatak z3 = new Zadatak();
-//            z3 = (Zadatak) getIntent().getSerializableExtra("z3");
-//            adapter.dodajZadatak(z3);
-//            lv.setAdapter(adapter);
-//        }
+        if(getIntent().getSerializableExtra("z")!=null) {
+           // brojZadataka++;
+            Zadatak z = new Zadatak();
+            z = (Zadatak) getIntent().getSerializableExtra("z");
+            adapter.dodajZadatak(z);
+            lv.setAdapter(adapter);
+        }
 
         Log.d(TAG, "onCreate: posle ubacivanja");
 
