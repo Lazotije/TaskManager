@@ -13,16 +13,28 @@ public class Zadatak implements Serializable {
     private int prioritet;
     private String vreme;
     private String datum;
+    private boolean zavrsen;
+    private boolean podsetnik;
 
-    public Zadatak(String ime, String opis, int prioritet, String vreme, String datum) {
+
+    public Zadatak(String ime, String opis, int prioritet, String vreme, String datum,boolean zavrsen,boolean podsetnik) {
         this.ime = ime;
         this.opis = opis;
         this.prioritet = prioritet;
         this.vreme = vreme;
         this.datum = datum;
+        this.zavrsen = zavrsen;
+        this.podsetnik = podsetnik;
     }
 
     public Zadatak() {
+        ime="";
+        opis="";
+        prioritet=0;
+        vreme="";
+        datum="";
+        zavrsen=false;
+        podsetnik=false;
     }
 
     public String getIme() {
@@ -65,5 +77,19 @@ public class Zadatak implements Serializable {
         this.datum = datum;
     }
 
+    public boolean isZavrsen() {
+        return zavrsen;
+    }
 
+    public void setZavrsen(boolean zavrsen) {
+        this.zavrsen = zavrsen;
+    }
+
+    public boolean isPodsetnik() {
+        return podsetnik;
+    }
+
+    public void setPodsetnik(boolean podsetnik) {
+        this.podsetnik = podsetnik;
+    }
 }

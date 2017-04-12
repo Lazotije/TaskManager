@@ -1,6 +1,7 @@
 package aleksandarlazic.ra1042014.example.com.taskmanager;
 
 
+import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -20,38 +21,31 @@ import android.widget.TimePicker;
 
 public class druga extends AppCompatActivity {
 
-    Button crveni;
-    Button zuti;
-    Button zeleni;
-    Button dodaj;
-    Button otkazi;
-    EditText ime;
-    EditText opis;
-    DatePicker datePicker;
-    TimePicker timePicker;
-    CheckBox checkBox;
-    int flag = 0;
-    int flag2 = 0;
-    int prioritet =0;
-    public static String TAG="tag";
-    int day;
-    int month;
-    int year;
-    int hours;
-    int minutes;
-    public String datum;
-    public String vreme;
-    final TaskAdapter adapter = new TaskAdapter(this);
-    ListView lw;
+    private Button crveni;
+    private Button zuti;
+    private Button zeleni;
+    private Button dodaj;
+    private Button otkazi;
+    private EditText ime;
+    private EditText opis;
+    private DatePicker datePicker;
+    private TimePicker timePicker;
+    private CheckBox checkBox;
+    private boolean azuriranje;
+    private int flag = 0;
+    private int flag2 = 0;
+    private int prioritet =0;
+    public static String TAG="druga Activity";
+    private int day;
+    private int month;
+    private int year;
+    private int hours;
+    private int minutes;
+    private String datum;
+    private String vreme;
+    private Zadatak z;
 
 
-    public Zadatak napraviZadatak(){
-        Zadatak z = new Zadatak(ime.getText().toString(),opis.getText().toString(),vratiPrioritet(),
-                uzmiVreme(), uzmiDatum());
-        Log.d(TAG, "napraviZadatak: "+z.getIme()+" "+z.getOpis()+" "+z.getPrioritet()+" "+
-                z.getVreme()+" "+z.getDatum());
-        return  z;
-    }
 
     private int vratiPrioritet(){
         return prioritet;
@@ -102,6 +96,19 @@ public class druga extends AppCompatActivity {
         timePicker = (TimePicker) findViewById(R.id.timePicker);
         checkBox = (CheckBox) findViewById(R.id.checkBox);
 
+        Intent i =getIntent();
+        if (i.hasExtra("dugi_klik_intent")){
+            azuriranje=true;
+            z= (Zadatak)i.getSerializableExtra("dugi_klik_intent");
+            ime.setText(z.getIme());
+            opis.setText(z.getOpis());
+            vreme = z.getVreme();
+            datum = z.getDatum();
+            dodaj.setText("Azuriraj");
+            otkazi.setText("Obrisi");
+        }else{
+            azuriranje=false;
+        }
 
         dodaj.setEnabled(false);
 
@@ -156,11 +163,16 @@ public class druga extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Log.d(TAG, "usao u dodaj: ");
-
-                //adapter.dodajZadatak(napraviZadatak());
-                Intent i = new Intent(druga.this, MainActivity.class);
-                i.putExtra("z",napraviZadatak());
-                startActivity(i);
+                if(!azuriranje) {
+                    z = new Zadatak(ime.getText().toString(), opis.getText().toString(), vratiPrioritet(),
+                            uzmiVreme(), uzmiDatum(),false,checkBox.isChecked());
+                    Intent i = new Intent();
+                    i.putExtra("zadatak", z);
+                    setResult(Activity.RESULT_OK, i);
+                    finish();
+                }else{
+                    finish();
+                }
             }
         });
 
@@ -169,6 +181,7 @@ public class druga extends AppCompatActivity {
             public void onClick(View v) {
                 Intent i2 = new Intent(druga.this,MainActivity.class);
                 startActivity(i2);
+                finish();
             }
         });
 

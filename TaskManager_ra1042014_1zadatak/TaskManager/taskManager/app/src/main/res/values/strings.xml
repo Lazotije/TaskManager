@@ -7,4 +7,6 @@
     <string name="crveni">crveni</string>
     <string name="zeleni">zeleni</string>
     <string name="zuti">zuti</string>
+    <string name="zadatak">zadatak</string>
+    <string name="dugi_klik_intnent">dugi_klik_intent</string>
 </resources>

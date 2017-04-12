@@ -1,27 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:longClickable="true"
+    android:id="@+id/lista_zadataka">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/tekstView"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/tekstView2"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/tekstView3"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/tekstView4"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/tekstView5"/>
 
-</LinearLayout>
+
+
+        <TextView
+            android:layout_width="50dp"
+            android:layout_height="60dp"
+            android:background="@color/zelena"
+            android:id="@+id/bojaPrioriteta"/>
+
+        <TextView
+            android:layout_toRightOf="@id/bojaPrioriteta"
+            android:id="@+id/imeZadatka"
+            android:maxLines="3"
+            android:width="100dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="ime zadatka"
+            android:gravity="center"
+            />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:id="@+id/zavrsen_zadatak"
+            android:clickable="true"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            />
+
+        <TextView
+
+            android:id="@+id/datum"
+            android:layout_width="70dp"
+            android:layout_height="30dp"
+            android:text="datum"
+            android:gravity="center"
+            android:layout_alignParentRight="true"
+            />
+
+        <TextView
+
+            android:id="@+id/vreme"
+            android:layout_width="60dp"
+            android:layout_height="30dp"
+            android:text="vreme"
+            android:layout_toLeftOf="@id/datum"
+            android:gravity="center"
+            />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/podsetnik"
+            android:layout_toLeftOf="@id/vreme"
+            android:clickable="false"
+            />
+
+
+
+
+
+
+
+</RelativeLayout>
