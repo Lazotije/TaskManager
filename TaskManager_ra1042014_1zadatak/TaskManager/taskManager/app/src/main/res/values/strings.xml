@@ -9,4 +9,21 @@
     <string name="zuti">zuti</string>
     <string name="zadatak">zadatak</string>
     <string name="dugi_klik_intnent">dugi_klik_intent</string>
+    <string name="ime">ime</string>
+    <string name="opis">opis</string>
+    <string name="azuriranje">azuriranje</string>
+    <string name="day">day</string>
+    <string name="month">month</string>
+    <string name="year">year</string>
+    <string name="hours">hours</string>
+    <string name="minutes">minutes</string>
+    <string name="datum">datum</string>
+    <string name="vreme">vreme</string>
+    <string name="zavrsen">zavrsen</string>
+    <string name="podsetnik">podsetnik</string>
+    <string name="danUNedelji">danUNedelji</string>
+    <string name="trenutnoS">trenutnoS</string>
+    <string name="diff">diff</string>
+    <string name="diffD">diffD</string>
+
 </resources>

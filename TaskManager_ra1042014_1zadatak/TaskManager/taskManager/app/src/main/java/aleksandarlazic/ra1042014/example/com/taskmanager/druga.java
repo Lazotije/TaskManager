@@ -54,7 +54,16 @@ public class druga extends AppCompatActivity {
     private String uzmiVreme(){
         hours = timePicker.getCurrentHour();
         minutes =  timePicker.getCurrentMinute();
-        vreme = Integer.toString(hours)+":"+Integer.toString(minutes);
+        if(hours <10 && minutes <10){
+            vreme = "0"+Integer.toString(hours)+":"+"0"+Integer.toString(minutes);
+        }else if(hours <10){
+            vreme = "0"+Integer.toString(hours)+":"+Integer.toString(minutes);
+        }else if(minutes<10){
+            vreme = Integer.toString(hours)+":"+"0"+Integer.toString(minutes);
+        }else{
+            vreme = Integer.toString(hours)+":"+Integer.toString(minutes);
+        }
+
         return vreme;
     }
 
@@ -63,6 +72,7 @@ public class druga extends AppCompatActivity {
         month = datePicker.getMonth() +1;
         year=datePicker.getYear();
         datum = Integer.toString(day)+"."+Integer.toString(month)+"."+Integer.toString(year);
+        Log.d(TAG, "uzmiDatum: "+ datum);
         return datum;
     }
 
