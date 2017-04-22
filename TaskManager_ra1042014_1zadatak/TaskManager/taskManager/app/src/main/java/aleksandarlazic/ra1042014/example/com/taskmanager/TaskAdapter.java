@@ -2,6 +2,7 @@ package aleksandarlazic.ra1042014.example.com.taskmanager;
 
 import android.app.TimePickerDialog;
 import android.content.Context;
+import android.content.res.Resources;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.icu.text.DateFormat;
@@ -22,6 +23,8 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+
+import static android.provider.Settings.Global.getString;
 
 /**
  * Created by lazic on 08-Apr-17.
@@ -294,6 +297,8 @@ public class TaskAdapter extends BaseAdapter {
 
         return view;
     }
+
+
 
     private class ViewHolder{
         public TextView name=null;

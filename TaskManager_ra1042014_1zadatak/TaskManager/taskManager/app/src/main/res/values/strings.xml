@@ -25,5 +25,14 @@
     <string name="trenutnoS">trenutnoS</string>
     <string name="diff">diff</string>
     <string name="diffD">diffD</string>
+    <string name="nazad">nazad</string>
+    <string name="Ponedeljak">ponedeljak</string>
+    <string name="Utorak">utorak</string>
+    <string name="Sreda">sreda</string>
+    <string name="Cetvrtak">cetvrtak</string>
+    <string name="Petak">petak</string>
+    <string name="Subota">subota</string>
+    <string name="Nedelja">nedelja</string>
+
 
 </resources>

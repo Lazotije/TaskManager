@@ -189,9 +189,9 @@ public class druga extends AppCompatActivity {
         otkazi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i2 = new Intent(druga.this,MainActivity.class);
-                startActivity(i2);
-                finish();
+                if(!azuriranje) {
+                    finish();
+                }
             }
         });
 

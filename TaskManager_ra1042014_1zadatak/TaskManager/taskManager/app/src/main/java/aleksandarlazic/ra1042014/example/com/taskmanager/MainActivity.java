@@ -66,9 +66,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i2 = new Intent(MainActivity.this,treca.class);
-                startActivity(i2);
+                startActivityForResult(i2,2);
+
             }
         });
+
 
     }
 
