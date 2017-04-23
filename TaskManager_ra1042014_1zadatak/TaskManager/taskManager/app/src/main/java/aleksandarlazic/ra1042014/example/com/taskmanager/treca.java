@@ -23,6 +23,7 @@ public class treca  extends AppCompatActivity  {
 
         back = (Button)findViewById(R.id.nazad);
 
+
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

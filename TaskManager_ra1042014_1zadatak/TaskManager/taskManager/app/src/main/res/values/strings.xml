@@ -33,6 +33,8 @@
     <string name="Petak">petak</string>
     <string name="Subota">subota</string>
     <string name="Nedelja">nedelja</string>
+    <string name="Danas">danas</string>
+    <string name="Sutra">sutra</string>
 
 
 </resources>

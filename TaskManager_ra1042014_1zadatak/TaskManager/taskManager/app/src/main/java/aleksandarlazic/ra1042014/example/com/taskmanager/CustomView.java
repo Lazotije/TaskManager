@@ -32,24 +32,23 @@ public class CustomView extends View {
 
 
 
-
-//    public void startAnim(final float maxP){
-//        curr=0;
-//        new Thread(new Runnable() {
-//            @Override
-//            public void run() {
-//                while(curr<maxP){
-//                    invalidate();
-//                    try {
-//                        Thread.sleep(50);
-//                    } catch (InterruptedException e) {
-//                        e.printStackTrace();
-//                    }
-//                }
-//                curr++;
-//            }
-//        }).start();
-//    }
+    public void startAnim(final float maxP){
+        curr=0;
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                while(curr<maxP){
+                    invalidate();
+                    try {
+                        Thread.sleep(50);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+                curr++;
+            }
+        }).start();
+    }
 
 
     @Override
@@ -101,8 +100,8 @@ public class CustomView extends View {
         canvas.drawText("Zadaci najnizeg prioriteta",width/4,4*height/5,paint6);
         canvas.drawArc(rect3,-90,360,true,paint);
         canvas.drawText("Zadaci srednjeg prioriteta",3*width/4,4*height/5,paint6);
-        if(procenat!=0) {
 
+        if(procenat!=0) {
             canvas.drawArc(rect, -90, (360*procenat), true, paint2);
             canvas.drawText(String.valueOf((int) (procenat*100))+"%", width/2, 27*height/100  , paint5);
         }else{
@@ -139,12 +138,22 @@ public class CustomView extends View {
         invalidate();
     }
 
+    public float getProcenat() {
+        return procenat;
+    }
+
+    public float getProcenat2() {
+        return procenat2;
+    }
+
+    public float getProcenat3() {
+        return procenat3;
+    }
+
     public CustomView(Context context) {
         super(context);
 
     }
-
-
 
     public CustomView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);

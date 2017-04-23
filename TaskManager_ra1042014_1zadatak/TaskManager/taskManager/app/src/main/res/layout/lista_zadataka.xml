@@ -38,7 +38,7 @@
         <TextView
 
             android:id="@+id/datum"
-            android:layout_width="70dp"
+            android:layout_width="80dp"
             android:layout_height="30dp"
             android:text="datum"
             android:gravity="center"
